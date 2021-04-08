@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport"
 		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="description" content="Мебельный магазин Ikea">
+	<meta name="keywords" content="Мебель, столы, стулья, кровати,кухня, декор">
+	<meta name="Author" content="Сурков Владислав">
+	<meta name="Copyright" content="Ikea">
 	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -14,11 +18,7 @@
 	<meta name="theme-color" content="#0058ab">
 	<title>Корзина - IKEA</title>
 	<link rel="stylesheet" href="styles/styles.css">
-	<script src="script/generateHeader.js" defer></script>
-	<script src="script/generateCatalog.js" defer></script>
-	<script src="script/generateSubCatalog.js" defer></script>
-	<script src="script/generateFooter.js" defer></script>
-	<script src="script/main.js" defer></script>
+	<script src="script/index.js" defer type="module"></script>
 </head>
 
 <body>
@@ -154,10 +154,13 @@
 
 			<form id="form" class="cart-form">
 				<label>
-					<input type="text" name="name" placeholder="Ваше имя">
+					<input required type="text" name="name" placeholder="Ваше имя">
 				</label>
 				<label>
-					<input type="email" name="email" placeholder="Ваш email">
+					<input required type="email" name="email" placeholder="Ваш email">
+				</label>
+				<label>
+					<input required type="tel" name="email" placeholder="Ваш телефон">
 				</label>
 				<button type="submit" class="cart-checkout">Оформить</button>
 			</form>

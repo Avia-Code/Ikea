@@ -1,4 +1,4 @@
-window.disabledScroll = function () {
+export const disabledScroll = () => {
     const widthScroll = window.innerWidth - document.body.offsetWidth;
     // console.log(widthScroll);
     // Запоминаем координати на которых было вызвано модальное окно
@@ -16,7 +16,7 @@ window.disabledScroll = function () {
     `;
 }
 
-window.enableScroll = function () {
+export const enableScroll = () => {
     document.body.style.cssText = ``;
     // функция скрола страницы на значение document.body.dbScrollY
     window.scroll({ top: document.body.dbScrollY });

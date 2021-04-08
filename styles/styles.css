@@ -71,13 +71,16 @@ img {
 	width: 100%;
 	height: auto;
 }
-
+iframe{
+	display: flex;
+	margin: 0 auto;
+}
 a {
 	text-decoration: none;
 	color: inherit;
 }
 
-ul {
+ul,nav {
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -608,6 +611,7 @@ footer {
 .goods-list {
 	display: -ms-grid;
 	display: grid;
+	grid-gap: 1.25rem;
 	grid-template-columns: repeat(4, 1fr);
 }
 

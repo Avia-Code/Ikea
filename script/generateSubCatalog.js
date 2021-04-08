@@ -1,8 +1,20 @@
-'use strict';
-
 function generateSubCatalog() {
-    const subCatalog = `
-    <div class="subcatalog">
+
+    const subCatalog = document.createElement('div');
+    subCatalog.classList.add('subcatalog');
+
+    const updateHTML = (header, list) => {
+
+        let listHTML = '';
+
+        list.forEach(item => {
+            listHTML = `
+            <li class="subcatalog-list__item">
+                <a href="goods.html?subcat=${item}">${item}</a>
+            </li>`
+        })
+
+        const subCatalogHTML = `
         <button type="button" class="btn btn-return catalog-btn" aria-expanded="true" title="Закрыть меню"
             aria-label="Закрыть меню">
             <svg focusable="false" class="svg-icon  hnf-svg-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -12,7 +24,7 @@ function generateSubCatalog() {
                 </path>
             </svg>
         </button>
-        <h3 class="subcatalog-header"><a href="goods.html?cat=Мебель"></a></h3>
+        <h3 class="subcatalog-header"><a href="goods.html?cat=${header}">${header}</a></h3>
         <ul class="subcatalog-list">
             <li class="subcatalog-list__item"><a href="goods.html?subcat=Диваны">Диваны</a></li>
             <li class="subcatalog-list__item"><a href="goods.html?subcat=Кресла">Кресла</a></li>
@@ -26,10 +38,14 @@ function generateSubCatalog() {
             <li class="subcatalog-list__item">
                 <a href="goods.html?subcat=Стулья для письменного стола">Стулья для письменного стола</a></li>
         </ul>
-    </div>
     `;
 
-    document.body.insertAdjacentHTML('beforeend', subCatalog);
+        subCatalog.insertAdjacentHTML('afterbegin', subCatalogHTML);
+    }
+
+    document.body.insertAdjacentElement('beforeend', subCatalog);
+
+    return updateHTML;
 } 
 
-generateSubCatalog()
+export default generateSubCatalog;
