@@ -304,6 +304,9 @@ footer {
 	padding: 6rem 4rem 3rem;
 
 }
+.catalog:hover{
+	background: lightgrey;
+}
 
 .catalog.open {
 	left: 0;
